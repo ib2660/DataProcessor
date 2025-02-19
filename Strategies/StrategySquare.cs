@@ -2,14 +2,9 @@
 
 internal class StrategySquare : IStrategy
 {
-    public List<int> ProcessData(List<int> datapunkter)
+    public int ProcessData(int datapunkt)
     {
-        List<int> result = [];
-        foreach (int datapunkt in datapunkter)
-        {
-            result.Add(datapunkt * datapunkt);
-        }
-        return result;
+        return datapunkt * datapunkt;
     }
 
     public override string ToString()

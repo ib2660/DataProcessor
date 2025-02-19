@@ -2,7 +2,6 @@
 
 internal interface IStrategy
 {
-    List<int> ProcessData(List<int> datapunkter);
-
+    int ProcessData(int datapunkt);
     string ToString();
 }

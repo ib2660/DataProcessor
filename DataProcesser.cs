@@ -1,5 +1,5 @@
 ﻿using DataProcessor.Strategies;
-using DataProcessor.Transformations;
+using DataProcessor.TransformationStrategies;
 using System.Text.Json;
 
 namespace DataProcessor
@@ -48,9 +48,12 @@ namespace DataProcessor
 
         internal List<int> ProcessData()
         {
-            List<int> result;
-            result = Strategy.ProcessData(datapunkter);
-            return result;
+            return datapunkter.Select(d => Strategy.ProcessData(d)).ToList();
+        }
+
+        internal List<List<int>> ExecuteTransformations()
+        {
+            return transformations.Select(t => t.Transform(datapunkter.Select(d => Strategy.ProcessData(d)).ToList())).ToList();
         }
     }
 }

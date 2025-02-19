@@ -2,14 +2,9 @@
 
 internal class StrategyPlus : IStrategy
 {
-    public List<int> ProcessData(List<int> datapunkter)
+    public int ProcessData(int datapunkt)
     {
-        List<int> result = [];
-        foreach (int datapunkt in datapunkter)
-        {
-            result.Add(datapunkt + 1);
-        }
-        return result;
+        return datapunkt + 1;
     }
 
     public override string ToString()

@@ -10,9 +10,10 @@
       97
     ],
   "transformations": [
-    { "Type": "DataProcessor.Transformations.ListTransformation" },
-    { "Type": "DataProcessor.Transformations.MaxTransformation" },
-    { "Type": "DataProcessor.Transformations.MinOfTransformations" }
+    { "Type": "DataProcessor.TransformationStrategies.ListTransformation" },
+    { "Type": "DataProcessor.TransformationStrategies.MaxTransformation" },
+    { "Type": "DataProcessor.TransformationStrategies.MinOfTransformations" },
+    { "Type": "DataProcessor.TransformationStrategies.SumTransformation" }
   ],
   "opgavetekst": "Strategy pattern: I denne opgave skal laves en klasse, der bruger strategy pattern. Lav en klasse med en liste af ints. Tænk på disse som datapunkter. Klassen kan f.eks. hedde dataprocessor, den vil være context i strategy pattern. Klassen skal have en række metoder, der databehandler listen. Listen skal måske ikke i sig selv ændres (men det er jeres beslutning), men i stedet beregne noget ud fra listen. Klassen skal konfigureres med en transformation, der kan ændre tal i listen til andre tal. Dette er jeres strategy. Eksempler kunne være: x => x + 3 x => x * x ... I bestemmer selv, om denne strategy skal defineres som et interface eller en delegate. I et interface ville det se ud som: int Transform(int i); Metoderne der skal laves er: a. SumOfTransforms: denne skal returnere summen af data efter transformation b. ListOfTransforms: denne skal returnere en liste af data efter transformation c. MinOfTransforms: denne skal returnere det mindste af tallene efter transformation d. MaxOfTansforms: som min bare det største e. Find selv på flere så hver af disse kan implementeres ved en løkke, der bruger strategien. Lav en klient, der anvender jeres dataprocessor med forskellige transformationer." 
 }

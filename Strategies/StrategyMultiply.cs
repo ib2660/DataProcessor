@@ -2,14 +2,9 @@
 
 internal class StrategyMultiply : IStrategy
 {
-    public List<int> ProcessData(List<int> datapunkter)
+    public int ProcessData(int datapunkt)
     {
-        List<int> result = [];
-        foreach (int datapunkt in datapunkter)
-        {
-            result.Add(datapunkt * 2);
-        }
-        return result;
+        return datapunkt* 2;
     }
 
     public override string ToString()
